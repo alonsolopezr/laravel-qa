@@ -15,14 +15,15 @@ class QuestionController extends Controller
     public function index()
     {
         //enble query log
-        // \DB::enableQueryLog();
-        //se cargan todos los Questions
+        //  \DB::enableQueryLog();
+        //se cargan todos los Questions, CON el modelo de usuario para evitar varios results
         $questions = Question::with('user')->latest()->paginate(5);
+        // $questions = Question::latest()->paginate(5);
         //se muestra la vista
         return view('questions.index', compact('questions'));
-        // return view('questions.index', compact('questions'))->render();
+        // view('questions.index', compact('questions'))->render();
 
-        // dd(\DB::getQueryLog());
+        //  dd(\DB::getQueryLog());
     }
 
     /**
