@@ -18,16 +18,10 @@ class QuestionController extends Controller
         //  \DB::enableQueryLog();
         //se cargan todos los Questions, CON el modelo de usuario para evitar varios results
         $questions = Question::with('user')->latest()->paginate(5);
-<<<<<<< HEAD
-        //se muestra la vista<
-        return view('questions.index', compact('questions'))->render();
-        // return view('questions.index', compact('questions'))->render();
-=======
         // $questions = Question::latest()->paginate(5);
         //se muestra la vista
         return view('questions.index', compact('questions'));
         // view('questions.index', compact('questions'))->render();
->>>>>>> lesson-6
 
         //  dd(\DB::getQueryLog());
     }
