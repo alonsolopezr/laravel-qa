@@ -10886,7 +10886,11 @@ a.text-dark:focus {
 
 .navbar-laravel {
   background-color: #fff;
+<<<<<<< HEAD
   box-shadow: 0 2px rgba(0, 0, 0, 0.04);
+=======
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+>>>>>>> lesson-6
 }
 
 .counters {
@@ -10904,5 +10908,27 @@ a.text-dark:focus {
 .counters .answer {
   width: 60px;
   height: 60px;
+<<<<<<< HEAD
+=======
+  border: 1pm solid red;
+}
+
+.counters .status.unanswered {
+  border: none;
+}
+
+.counters .status.answered {
+  border: 1px solid #5fbb7e;
+  color: #5fbb7e;
+}
+
+.counters .status.answered-accepted {
+  background-color: #5fbb7e;
+  color: #fff;
+}
+
+.counters .view {
+  margin-top: 10px;
+>>>>>>> lesson-6
 }
 

@@ -1,16 +1,15 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
-
+@import "~bootstrap/scss/bootstrap";
 
 .navbar-laravel {
     background-color: #fff;
-    box-shadow: 0 2px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
 .counters {
@@ -27,6 +26,29 @@
     .answer {
         width: 60px;
         height: 60px;
+        border: 1px solid red;
     }
 
+    .status {
+        &.unanswered {
+            //class= "status unsawnswered"
+            border: none;
+        }
+
+        &.answered {
+            //class= "status unsawnswered"
+            border: 1px solid $color-green;
+            color: $color-green;
+        }
+
+        &.answered-accepted {
+            //class= "status unsawnswered"
+            background-color: $color-green;
+            color: $color-white;
+        }
+    }
+
+    .view {
+        margin-top: 10px
+    }
 }

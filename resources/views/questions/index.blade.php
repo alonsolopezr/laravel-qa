@@ -12,6 +12,7 @@
                        <div class="media">
                            <div class="d-flex flex-column counters">
                                <div class="vote">
+<<<<<<< HEAD
                                   <strong>{{$question->votes}}</strong>{{Str::plural('vote', $question->votes)}}
                                </div>
                                <div class="answer">
@@ -19,6 +20,15 @@
                                </div>
                                <div class="view">
                                   {{$question->views ." ". Str::plural('view', $question->views)}}
+=======
+                                <strong>{{$question->votes}}</strong>{{Str::plural('vote', $question->votes)}}
+                               </div>
+                            <div class="status {{$question->status}}">
+                                <strong>{{$question->answers}}</strong>{{Str::plural('answer', $question->answers)}}
+                               </div>
+                               <div class="view">
+                                {{$question->views." ".Str::plural('view', $question->views)}}
+>>>>>>> lesson-6
                                </div>
                            </div>
                            <div class="media-body">
