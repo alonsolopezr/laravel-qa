@@ -10886,11 +10886,7 @@ a.text-dark:focus {
 
 .navbar-laravel {
   background-color: #fff;
-<<<<<<< HEAD
-  box-shadow: 0 2px rgba(0, 0, 0, 0.04);
-=======
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
->>>>>>> lesson-6
 }
 
 .counters {
@@ -10908,9 +10904,7 @@ a.text-dark:focus {
 .counters .answer {
   width: 60px;
   height: 60px;
-<<<<<<< HEAD
-=======
-  border: 1pm solid red;
+  border: 1px solid red;
 }
 
 .counters .status.unanswered {
@@ -10929,6 +10923,5 @@ a.text-dark:focus {
 
 .counters .view {
   margin-top: 10px;
->>>>>>> lesson-6
 }
 
