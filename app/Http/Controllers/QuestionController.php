@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Question;
 use Illuminate\Http\Request;
+use App\Http\Requests\AskQuestionRequest;
 
 class QuestionController extends Controller
 {
@@ -44,9 +45,12 @@ class QuestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    //usar Request hecho AskQuestionRequest
+    public function store(AskQuestionRequest $request)
     {
-        //
+        // $request->user()->questions()->create($request->only('title', 'body'));
+        $request->user()->questions()->create($request->all());
+        return redirect()->route('questions.index')->with('success', 'Pregunta creada...' . $request->title);
     }
 
     /**
@@ -57,7 +61,8 @@ class QuestionController extends Controller
      */
     public function show(Question $question)
     {
-        //
+        //mostrar pregunta
+        return view('questions.show', compact('question'));
     }
 
     /**
@@ -68,7 +73,7 @@ class QuestionController extends Controller
      */
     public function edit(Question $question)
     {
-        //
+        //mostrar view edit
     }
 
     /**
@@ -80,7 +85,7 @@ class QuestionController extends Controller
      */
     public function update(Request $request, Question $question)
     {
-        //
+        //Recibir Request AskQuestionRequest y actualizar $question inyectado
     }
 
     /**
@@ -91,6 +96,6 @@ class QuestionController extends Controller
      */
     public function destroy(Question $question)
     {
-        //
+        //borrar question inyectado
     }
 }
