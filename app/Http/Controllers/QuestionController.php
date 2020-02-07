@@ -14,7 +14,7 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        //enble query log
+        //enable query log
         //  \DB::enableQueryLog();
         //se cargan todos los Questions, CON el modelo de usuario para evitar varios results
         $questions = Question::with('user')->latest()->paginate(5);
@@ -34,6 +34,8 @@ class QuestionController extends Controller
     public function create()
     {
         //
+        $question = new Question();
+        return view('questions.create', compact('question'));
     }
 
     /**
