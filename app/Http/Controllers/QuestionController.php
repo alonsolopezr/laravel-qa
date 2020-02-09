@@ -104,5 +104,7 @@ class QuestionController extends Controller
     public function destroy(Question $question)
     {
         //borrar question inyectado
+        $question->delete();
+        return redirect('/questions')->with('success', 'la Pregunta se borró...');
     }
 }
