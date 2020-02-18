@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex align-items-center">
-                        <h2>Show Question</h2>
+                    <h1>{{$question->title}}</h1>
                         <div class="ml-auto">
                             <a href="{{route('questions.index')}}" class="btn btn-outline-secondary">Back to all Question</a>
                         </div>
@@ -16,32 +16,9 @@
 
                 <div class="card-body">
                     {{-- msg de success descpues de forms --}}
-                    @include('layouts._messages')
-                    <form action="{{route('questions.store')}}" method="post">
-                        @csrf
-                        <div class="form-group">
-                            <label for="question-title">Question Title</label>
-                            <input type="text" name="title" value="{{$question->title}}" id="question-title" class="form-control {{$errors->has('title')?'is-invalid':''}}" >
-                            @if($errors->has('title'))
-                                <div class="invalid-feedback">
-                                    <strong>{{$errors->first('title')}}</strong>
-                                </div>
-                            @endif
-                        </div>
-                        <div class="form-group">
-                            <label for="question-body">Explain your Question</label>
-                            <textarea name="body" row="10" id="question-body" class="form-control {{$errors->has('body')?'is-invalid':''}}" >{{$question->body}} </textarea>
-                            @if($errors->has('body'))
-                                <div class="invalid-feedback">
-                                    <strong>{{$errors->first('body')}}</strong>
-                                </div>
-                            @endif
-                        </div>
-                        <div class="mx-auto">
-                            <button type="submit" class="btn btn-outline-primary btn-lg">Edit this question</button>
-                            <button type="submit" class="btn btn-outline-danger btn-lg">Delete this question</button>
-                        </div>
-                    </form>
+
+                           {!! $question->body_html !!}
+
                 </div>
             </div>
         </div>

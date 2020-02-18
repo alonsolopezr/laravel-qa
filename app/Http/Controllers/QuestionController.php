@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Question;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\AskQuestionRequest;
 
 class QuestionController extends Controller
@@ -61,6 +63,8 @@ class QuestionController extends Controller
      */
     public function show(Question $question)
     {
+        //incrementar views
+        $question->increment('views');
         //mostrar pregunta
         return view('questions.show', compact('question'));
     }
